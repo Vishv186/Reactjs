@@ -1,3 +1,5 @@
+// useState is a React Hook that allows functional components to store, read, and update state, causing the component to re-render when the state changes.
+
 import { useState } from "react";
 
 function App() {
