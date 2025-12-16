@@ -12,6 +12,7 @@ function App() {
 }
 
 function Counter() {
+  // useState Syntax
   const [count, setCount] = useState(0);
 
   return (
