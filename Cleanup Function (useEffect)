@@ -1,0 +1,38 @@
+// Cleanup Function is used to stop or remove side effects when a component unmounts or before the effect runs again.
+
+import { useState, useEffect } from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>Hii there, I a, learning Reactjs</h1>
+      <Counter/>
+  </div>
+  )
+}
+
+function Counter() {
+  // useState Syntax
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Side Effect
+    document.title = `Count: ${count}`;
+
+    // Cleanup Function
+    return () => {
+      document.title = "React App";
+      console.log("Cleanup executed");
+    };
+
+  }, [count]);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+export default App;
